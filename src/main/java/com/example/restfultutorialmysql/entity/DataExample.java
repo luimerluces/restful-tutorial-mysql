@@ -8,6 +8,7 @@ import lombok.NonNull;
 import javax.persistence.*;
 
 //we define this is an entity
+//entity is a POJO that interacts with the JPA
 @Entity
 //using lombok
 //generates all the boilerplate that is normally associated with simple POJOs (Plain Old Java Objects)
