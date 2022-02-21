@@ -9,12 +9,12 @@ public interface DataExampleService {
     List<DataExample> getAllData();
 
     //POST
-    DataExample saveData();
+    DataExample saveData(DataExample dataExample);
 
     //PUT
-    DataExample updateDate();
+    DataExample updateDate(DataExample dataExample);
 
     //DELETE
-    void deleteData();
+    void deleteDataById(Long id);
 
 }
