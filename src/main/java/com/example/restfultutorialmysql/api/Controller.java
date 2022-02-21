@@ -5,9 +5,8 @@ import com.example.restfultutorialmysql.service.DataExampleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,4 +31,29 @@ public class Controller {
     public ResponseEntity<List<DataExample>> getData(){
         return new ResponseEntity<List<DataExample>>(dataExampleService.getAllData(), HttpStatus.OK);
     }
+    //you can also just get all the data
+    //without making a ResponseEntity object
+//    @GetMapping("/data")
+//    public List<RandomData> getData(){
+//        return dataService.getRandomData();
+//    }
+
+    //save the data you send and return CREATED
+    @PostMapping("/data")
+    public ResponseEntity<DataExample> saveDate(@Validated @RequestBody DataExample dataExample){
+        return new ResponseEntity<>(dataExampleService.saveData(dataExample), HttpStatus.CREATED);
+    }
+
+    //update the data
+    @PutMapping("/data")
+    public ResponseEntity<DataExample> updateData(@RequestBody DataExample dataExample){
+        return new ResponseEntity<>(dataExampleService.updateDate(dataExample), HttpStatus.OK);
+    }
+
+    //delete the data
+    @DeleteMapping("/data/{id}")
+    public ResponseEntity<HttpStatus> deleteData(@PathVariable Long id){
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 }
