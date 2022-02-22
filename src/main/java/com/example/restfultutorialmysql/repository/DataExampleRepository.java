@@ -12,12 +12,17 @@ import java.util.List;
 @Repository
 public interface DataExampleRepository extends JpaRepository<DataExample, Long> {
 
-    //get data by email
-    List<DataExample> findDataExampleByEmail(String email);
+    //this are JPA additional methods
+    //follow the docs to know how to create them
+    //https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
+    //uncomment this and try to implement them in the Service yourself
 
-    //get data by name
-    List<DataExample> findDataExampleByName(String name);
-
-    //get data by id
-    List<DataExample> findDataExampleByDataId(Long id);
+//    //get data by email
+//    List<DataExample> findDataExampleByEmail(String email);
+//
+//    //get data by name
+//    List<DataExample> findDataExampleByName(String name);
+//
+//    //get data by id
+//    List<DataExample> findDataExampleByDataId(Long id);
 }
