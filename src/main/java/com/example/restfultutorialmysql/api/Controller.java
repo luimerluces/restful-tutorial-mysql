@@ -22,6 +22,7 @@ public class Controller {
 
     //we inject the service bean
     //and use it to handle the data
+    //after every call to the endpoint we will do dataExampleService.method(methodParam);
     @Autowired
     DataExampleServiceImpl dataExampleService;
 
@@ -39,6 +40,9 @@ public class Controller {
 //    }
 
     //save the data you send and return CREATED
+    //valid docs: https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/Validate.html
+    //difference with @Validated: https://stackoverflow.com/questions/36173332/difference-between-valid-and-validated-in-spring
+    //ReQuestBody means you are expected to introduce data into your request
     @PostMapping("/data")
     public ResponseEntity<DataExample> saveDate(@Validated @RequestBody DataExample dataExample){
         return new ResponseEntity<>(dataExampleService.saveData(dataExample), HttpStatus.CREATED);
@@ -51,8 +55,11 @@ public class Controller {
     }
 
     //delete the data
+    //PathVariable means you are expected to pass a parameter/variable
+    //{id} translates into the Long id that you interact with afterwards
     @DeleteMapping("/data/{id}")
     public ResponseEntity<HttpStatus> deleteData(@PathVariable Long id){
+        dataExampleService.deleteDataById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
