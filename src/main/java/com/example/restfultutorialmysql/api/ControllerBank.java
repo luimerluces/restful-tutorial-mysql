@@ -67,7 +67,7 @@ public class ControllerBank {
             Boolean updateBank= bankService.updateProduct(_bank);
             if (updateBank=true){
                 msj.setSuccess(true);
-                msj.setMessage("All Options in el the bank are Activated");            
+                msj.setMessage("All Options in el the bank are Inactive");            
             }            
 	    return new ResponseEntity<MessageResponse>(msj,HttpStatus.OK);        
         } else {
