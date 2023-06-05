@@ -1,0 +1,201 @@
+---*************************************************Total Transacciones Aprobadas P2P **************************************************************
+OPEN curTotalTran;
+loop
+    fetch curTotalTran into v_TotalRegistro,v_TotalBolivares;
+    exit when curTotalTran%notfound;
+    DBMS_OUTPUT.PUT_LINE('TOTAL REGISTROS TRANSACCIONES P2P: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES P2P: '||v_TotalBolivares);
+end loop;
+close curTotalTran;
+---*************************************************Total Transacciones RECHAZADAS P2P **************************************************************
+OPEN curTotalTransRech;
+loop
+    fetch curTotalTransRech into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curTotalTransRech%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curTotalTransRech;
+---*************************************************Total Transacciones Canal 05 Aprobadas P2P **************************************************************
+OPEN curC05Aprob;
+loop
+    fetch curC05Aprob into v_TotalRegistro,v_TotalBolivares;
+    exit when curC05Aprob%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC05Aprob;
+---*************************************************Total Transacciones Canal 05 Rechazadas P2P **************************************************************
+OPEN curC05Rech;
+loop
+    fetch curC05Rech into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC05Rech%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC05Rech;
+---*************************************************Total Transacciones Probadas Internas P2P **************************************************************
+OPEN curC05AprobInter;
+loop
+    fetch curC05AprobInter into v_TotalRegistro,v_TotalBolivares;
+    exit when curC05AprobInter%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC05AprobInter;
+---*************************************************Total Transacciones CANAL 05 RECHAZADAS INTERNAS P2P **************************************************************
+OPEN curC05RechInte;
+loop
+    fetch curC05RechInte into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC05RechInte%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC05RechInte;
+---*************************************************Total Transacciones CANAL 05 Aprobadas INTERBANCARIAS P2P ---*************************************************Total Transacciones CANAL 05 RECHAZADAS INTERNAS P2P ************************************************************** **************************************************************
+OPEN curC05AproInterBan;
+loop
+    fetch curC05AproInterBan into v_TotalRegistro,v_TotalBolivares;
+    exit when curC05AproInterBan%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC05AproInterBan;
+
+---*************************************************Total Transacciones CANAL 05 RECHAZADAS INTERBANCARIAS P2P ---*************************************************Total Transacciones CANAL 05 RECHAZADAS INTERNAS P2P ************************************************************** **************************************************************
+OPEN curC05RechInterBan;
+loop
+    fetch curC05RechInterBan into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC05RechInterBan%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC05RechInterBan;
+---*************************************************Total Transacciones CANAL 54 APROBADAS P2P ---*************************************************Total Transacciones CANAL 05 RECHAZADAS INTERNAS P2P ************************************************************** **************************************************************
+OPEN curC54Apo;
+loop
+    fetch curC54Apo into v_TotalRegistro,v_TotalBolivares;
+    exit when curC54Apo%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC54Apo;
+---*************************************************Total Transacciones CANAL 54 Rechazadas P2P ---*************************************************Total Transacciones CANAL 05 RECHAZADAS INTERNAS P2P ************************************************************** **************************************************************
+OPEN curC54Recha;
+loop
+    fetch curC54Recha into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC54Recha%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC54Recha;
+---*************************************************Total Transacciones CANAL 54 APROBADAS INTERNAS P2P ---*************************************************Total Transacciones CANAL 05 RECHAZADAS INTERNAS P2P ************************************************************** **************************************************************
+OPEN curC54AproInter;
+loop
+    fetch curC54AproInter into v_TotalRegistro,v_TotalBolivares;
+    exit when curC54AproInter%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC54AproInter;
+---*************************************************Total Transacciones CANAL 54 RECHAZADAS INTERNAS P2P ---*************************************************Total Transacciones CANAL 05 RECHAZADAS INTERNAS P2P ************************************************************** **************************************************************
+OPEN curC54RechaInter;
+loop
+    fetch curC54RechaInter into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC54RechaInter%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC54RechaInter;
+---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ************************************************************** **************************************************************
+OPEN curC54AproInterban;
+loop
+    fetch curC54AproInterban into v_TotalRegistro,v_TotalBolivares;
+    exit when curC54AproInterban%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC54AproInterban;
+---*************************************************Total Transacciones CANAL 54 RECHAZADAS INTERBANCARIAS P2P ---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ************************************************************** **************************************************************
+OPEN curC54RechaInterban;
+loop
+    fetch curC54RechaInterban into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC54RechaInterban%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC54RechaInterban;
+---*************************************************Total Transacciones CANAL 14 MENSAJES SMS APROBADAS P2P ---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ************************************************************** **************************************************************
+OPEN curC14Apro;
+loop
+    fetch curC14Apro into v_TotalRegistro,v_TotalBolivares;
+    exit when curC14Apro%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC14Apro;
+---*************************************************Total Transacciones CANAL 14 MENSAJES SMS RECHAZADAS P2P ---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ************************************************************** **************************************************************
+OPEN curC14Recha;
+loop
+    fetch curC14Recha into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC14Recha%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC14Recha;
+---*************************************************Total Transacciones CANAL 14 MENSAJES SMS APROBADAS INTERNAS P2P ---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ************************************************************** **************************************************************
+OPEN curC14AprobInter;
+loop
+    fetch curC14AprobInter into v_TotalRegistro,v_TotalBolivares;
+    exit when curC14AprobInter%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC14AprobInter;
+---*************************************************Total Transacciones CANAL 14 MENSAJES SMS RECHAZADAS INTERNAS P2P ---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ************************************************************** **************************************************************
+OPEN curC14RechInternas;
+loop
+    fetch curC14RechInternas into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC14RechInternas%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC14RechInternas;
+---*************************************************Total Transacciones CANAL 14 MENSAJES SMS APROBADAS INTERBANCARIAS P2P ---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ************************************************************** **************************************************************
+OPEN curC14AprobaInterBanc;
+loop
+    fetch curC14AprobaInterBanc into v_TotalRegistro,v_TotalBolivares;
+    exit when curC14AprobaInterBanc%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC14AprobaInterBanc;
+---*************************************************Total Transacciones CANAL 14 MENSAJES SMS RECHAZADAS INTERBANCARIAS P2P ---*************************************************Total Transacciones CANAL 54 APROBADAS INTERBANCARIAS P2P ************************************************************** **************************************************************
+OPEN curC14RechaInterBanca;
+loop
+    fetch curC14RechaInterBanca into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curC14RechaInterBanca%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curC14RechaInterBanca;
+---*************************************************//TOTAL TRANSACCIONES INTERNAS E INTERBANCARIAS APROBADAS (INTERNAS) P2P---*************************************************************
+OPEN curTransaInterInterBancInterApro;
+loop
+    fetch curTransaInterInterBancInterApro into v_TotalRegistro,v_TotalBolivares;
+    exit when curTransaInterInterBancInterApro%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curTransaInterInterBancInterApro;
+---*************************************************//TOTAL TRANSACCIONES INTERBANCARIAS SALIENTES APROBADAS P2P---****************
+OPEN curTraInterBancSalApro;
+loop
+    fetch curTraInterBancSalApro into v_TotalRegistro,v_TotalBolivares;
+    exit when curTraInterBancSalApro%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curTraInterBancSalApro;
+---*************************************************//TOTAL TRANSACCIONES INTERBANCARIAS SALIENTES RECHAZADAS P2P---****************
+OPEN curTranInterbansSalRecha;
+loop
+    fetch curTranInterbansSalRecha into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curTranInterbansSalRecha%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curTranInterbansSalRecha;
+---*************************************************////TOTAL TRANSACCIONES INTERBANCARIAS ENTRANTES APROBADAS P2P---****************
+OPEN curTransInterBanEntrAprob;
+loop
+    fetch curTransInterBanEntrAprob into v_TotalRegistro,v_TotalBolivares;
+    exit when curTransInterBanEntrAprob%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curTransInterBanEntrAprob;
+---*************************************************////TOTAL TRANSACCIONES INTERBANCARIAS ENTRANTES RECHAZADAS P2P---****************
+OPEN curTranInterBanEntrRech;
+loop
+    fetch curTranInterBanEntrRech into v_TIpoRechazo,v_TotalRegistro,v_TotalBolivares;
+    exit when curTranInterBanEntrRech%notfound;
+    DBMS_OUTPUT.PUT_LINE(' TIPO RECHAZO: '||v_TIpoRechazo||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalRegistro||' TOTAL REGISTROS TRANSACCIONES: '||v_TotalBolivares);
+end loop;
+close curTranInterBanEntrRech;
