@@ -1,4 +1,5 @@
 package com.example.restfultutorialmysql.util;
+
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -6,39 +7,50 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.ByteArrayOutputStream;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
 public class PdfGenerator {
-    public ByteArrayOutputStream getPDF(String Date,String Time) {
+
+    public ByteArrayOutputStream getPDF(String Date, String Time) {
         // Creamos la instancia de memoria en la que se escribirá el archivo temporalmente
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
             Document document = new Document(PageSize.A4);
             Calendar calendario = new GregorianCalendar();
-            String mes = "Febrero";
-            Font fuenteTitulo = new Font();
-            fuenteTitulo.setSize(6);
-            Font negrita = new Font();
-            negrita.setStyle(Font.NORMAL);
-            
-            Chunk titulo = new Chunk("TRANSACCIONES DE P2P");
-            titulo.setUnderline(2f, -2f);
-            titulo.setFont(fuenteTitulo);
-            
-            //Chunk titulo = new Chunk("TRANSACCIONES DE P2P");
-            //titulo.setUnderline(2f, -2f);            
+            Paragraph p = new Paragraph();
+            p.add("This is my paragraph 1");
+            p.setAlignment(Element.ALIGN_CENTER);
 
-            Chunk fecha = new Chunk("" + calendario.get(Calendar.DATE) + " de " + mes + " de " + calendario.get(Calendar.YEAR));                        
-            
-            
-            PdfPTable tabla = new PdfPTable(1);
+            Paragraph p2 = new Paragraph();
+            p2.add("This is my paragraph 2"); //no align
 
-            PdfPCell celda0 = new PdfPCell(new Phrase("REPORTE ESTADISTICO P2P DEL "+ calendario.get(Calendar.DATE) + " de " + mes + " de " + calendario.get(Calendar.YEAR)+""));
-            PdfPCell celda1 = new PdfPCell(new Phrase("TRANSACCIONES DE P2P DESDE LAS 00:00:00 HASTA LAS 08:54:01"));
-            
-            tabla.addCell(celda0);
-            tabla.addCell(celda1);
-            // Asignamos la variable ByteArrayOutputStream bos donde se escribirá el documento
+            Font f = new Font();
+            f.setStyle(Font.BOLD);
+            f.setSize(8);
+
+            PdfPTable tabla = new PdfPTable(4);
+            tabla.getDefaultCell().setBorder(Rectangle.NO_BORDER);
+            for (int i = 0; i < 15; i++) {
+                tabla.addCell("celda " + i);
+            }
+// Asignamos la variable ByteArrayOutputStream bos donde se escribirá el documento
+            PdfPTable tabla1 = new PdfPTable(4);
+            tabla1.getDefaultCell().setBorder(Rectangle.NO_BORDER);
+
+            for (int i = 0; i < 15; i++) {
+                tabla1.addCell("celda " + i);
+            }
             PdfWriter.getInstance(document, bos);
             document.open();
             document.add(tabla);
+            document.add(tabla1);
+            document.add(p);
+            document.add(new Paragraph("This is my paragraph 3", f));
+            document.add(new Paragraph("Esto es el primer párrafo, normalito"));
+            document.add(new Paragraph("Este es el segundo y tiene una fuente rara",
+                    FontFactory.getFont("arial", // fuente
+                            22, // tamaño
+                            Font.ITALIC, // estilo
+                            BaseColor.CYAN)));             // color
+
             document.close();
             // Retornamos la variable al finalizar
             return bos;
