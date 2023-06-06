@@ -6,15 +6,12 @@ public class Accumulated_RangeJsondto {
     public String getValue() {
         return Value;
     }
-
     public void setValue(String Value) {
         this.Value = Value;
     }
-
     public String getLabel() {
         return Label;
     }
-
     public void setLabel(String Label) {
         this.Label = Label;
     }
