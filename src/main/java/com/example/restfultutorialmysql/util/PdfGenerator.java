@@ -102,7 +102,7 @@ public class PdfGenerator {
             datatable.setHeaderRows(1); // this is the end of the table header
             datatable.getDefaultCell().setBorderWidth(1);
 
-            PdfPTable table = new PdfPTable(3);
+            SCPdfPTable table = new PdfPTable(3);
             headerCliAFi.setBackgroundColor(new BaseColor(215, 219, 221));
             headerCliAFi.setHorizontalAlignment(Element.ALIGN_CENTER);
             headerCliAFi.setPhrase(new Phrase("Afiliados: "+formato.format(TotalAfiliados)+"", headFontClienteDetalles));
