@@ -1,9 +1,11 @@
 package com.example.restfultutorialmysql.api;
+import com.example.restfultutorialmysql.dto.AllSumdto;
 import com.example.restfultutorialmysql.dto.Dates;
 import com.example.restfultutorialmysql.dto.Dates;
 import com.example.restfultutorialmysql.dto.TimeError;
 import com.example.restfultutorialmysql.dto.RpErrorsdto;
 import com.example.restfultutorialmysql.dto.RpOperationsdto;
+import com.example.restfultutorialmysql.entity.RpdOperationsP2C;
 import com.example.restfultutorialmysql.service.ApprovedChannelServiceImplP2C;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
@@ -47,4 +49,18 @@ public class ControllerApprovedChannelP2C {
         List<RpOperationsdto> OperacionesList = ApprovedChannelService.getAllApprovedRejectedP2C(Dates,Time,TypeReport);         
         return OperacionesList;
     }
+    
+    @CrossOrigin(origins = "*")   
+    @GetMapping(value = "/getAllSUMP2C/{dates}/{Time}/{TypeReport1}/{TypeReport2}/{TypeReport3}",  produces="application/json")
+    public List<AllSumdto> getAllSUMP2C(@PathVariable("dates") String Dates,@PathVariable("Time") String Time,@PathVariable("TypeReport1") int TypeReport1,@PathVariable("TypeReport2") int TypeReport2,@PathVariable("TypeReport3") int TypeReport3) {                                
+        List<RpdOperationsP2C> AllSumList = ApprovedChannelService.getAllSUMP2C(Dates,Time,TypeReport1,TypeReport2,TypeReport3);         
+        List<AllSumdto> listResultSumP2C = new ArrayList<AllSumdto>();
+        for (RpdOperationsP2C n : AllSumList) {             
+             AllSumdto dto = new AllSumdto();             
+             dto.setNumRegister(n.getNumregister());                          
+             dto.setDescription(n.getDescription());
+             listResultSumP2C.add(dto);
+         }
+        return listResultSumP2C;
+    }    
 }

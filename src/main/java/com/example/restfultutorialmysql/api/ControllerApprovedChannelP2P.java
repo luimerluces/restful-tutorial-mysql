@@ -1,7 +1,6 @@
 package com.example.restfultutorialmysql.api;
 import com.example.restfultutorialmysql.dto.Dates;
 import com.example.restfultutorialmysql.dto.TimeError;
-import com.example.restfultutorialmysql.dto.RpErrorsdto;
 import com.example.restfultutorialmysql.dto.RpOperationsdto;
 import com.example.restfultutorialmysql.service.ApprovedChannelServiceImplP2P;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;  
-import com.example.restfultutorialmysql.service.ApprovedChannelServiceP2P;
 @RestController
 public class ControllerApprovedChannelP2P {
     @Autowired

@@ -30,7 +30,5 @@ public class BankServiceImpl implements BankService{
             e.printStackTrace();
         }
         return status;
-    }
-
-    
+    }    
 }

@@ -1,5 +1,7 @@
 package com.example.restfultutorialmysql.service;
+import com.example.restfultutorialmysql.dto.AllSumdto;
 import com.example.restfultutorialmysql.dto.RpOperationsdto;
+import com.example.restfultutorialmysql.entity.RpdOperationsP2C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -20,5 +22,11 @@ public class ApprovedChannelServiceImplP2C implements ApprovedChannelServiceP2C{
     public List<RpOperationsdto> getAllApprovedRejectedP2C(String Date,String Time,int TypeReport) {        
         return approvedchannelRepository.getAllApprovedRejectedP2C(Date, Time,TypeReport);
     }
+    
+    public List<RpdOperationsP2C> getAllSUMP2C(String Date,String Time,int TypeReport1,int TypeReport2,int TypeReport3) {        
+        return approvedchannelRepository.getAllSUMP2C(Date, Time,TypeReport1,TypeReport2,TypeReport3);
+    }
+    
+    
     
 }

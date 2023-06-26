@@ -1,4 +1,5 @@
 package com.example.restfultutorialmysql.repository;
+import com.example.restfultutorialmysql.dto.AllSumdto;
 import com.example.restfultutorialmysql.dto.RpClientsdto;
 import com.example.restfultutorialmysql.dto.RpOperationsdto;
 import com.example.restfultutorialmysql.entity.RpdOperationsP2C;
@@ -16,5 +17,10 @@ public interface ApprovedChannelRepositoryP2C extends JpaRepository<RpdOperation
    
    @Query(value ="select description,date_proccess,time_proccess,numregister,amountbs,coderror,detail from RPD_OPERATIONSP2C where TYPE='P2C' and date_proccess=?1 and time_proccess=?2 and idtype=?3 order by description ASC" ,nativeQuery = true)
    List<RpOperationsdto> getAllApprovedRejectedP2C(String Date,String Time,int TypeReport);   
+   
+   @Query(value ="select * from rpd_operationsp2c where idtype in (12,13,14)and date_proccess=?1 and time_proccess=?2" ,nativeQuery = true)
+   List<RpdOperationsP2C>getAllSUMP2C(String Date,String Time,int TypeReport1,int TypeReport2,int TypeReport3);   
+   
+   
    
 }
